@@ -1,5 +1,6 @@
 import express from 'express';
-import  { createPrompt, createQuiz, getAllPrompts, getAllQuizzes, getPromptById, getQuizById, updatePrompt, deletePrompt, updateQuiz, deleteQuiz } from '../controllers/controller.js';
+import { createPrompt, getAllPrompts, getPromptById, updatePrompt, deletePrompt } from '../controllers/prompt_controllers.js'; 
+import { createQuiz, getAllQuizzes, getQuizById, updateQuiz, deleteQuiz } from '../controllers/quiz_controllers.js';
 
 const router = express.Router();
 
@@ -14,10 +15,8 @@ router.get('/quizzes/:id', getQuizById);
 
 router.put('/prompts/:id', updatePrompt);
 router.delete('/prompts/:id', deletePrompt);
+
 router.put('/quizzes/:id', updateQuiz);
 router.delete('/quizzes/:id', deleteQuiz);
-
-// router.put('/prompts/:id', updatePrompt);
-// router.delete('/prompts/:id', deletePrompt);
 
 export default router;

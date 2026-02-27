@@ -1,2 +1,1 @@
-# Quiz-Chain-Fullstack
-
+# Quiz-Chained-IT

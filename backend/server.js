@@ -15,9 +15,9 @@ app.use(express.json());
 app.use(morgan('dev'));
 
 // for testing only, can be commented out later
-app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
-});
+// app.listen(PORT, () => {
+//     console.log(`Server is running on http://localhost:${PORT}`);
+// });
 app.get('/', (req, res) => {
     res.send('Hello, Brother!');
     console.log('Hello, Brother!');
@@ -28,9 +28,10 @@ app.get('/test', (req, res) => {
 });
 
 // testing api (can be deleted later)
-app.use('/api/quizzes', route);
+app.use('/api', route);
 
 
+// prompt form and created quizzes api
 async function initDB() {
     try {
         await db.query( `
@@ -51,7 +52,7 @@ async function initDB() {
             
           CREATE TABLE IF NOT EXISTS quizzes (
             id SERIAL PRIMARY KEY,
-            prompt_id INTEGER REFERENCES prompts(id) ON DELETE CASCADE,
+            prompt_id INTEGER REFERENCES prompts(id),
             title VARCHAR(255) NOT NULL,
             description TEXT,
             questions JSONB NOT NULL,
