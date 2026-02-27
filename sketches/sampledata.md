@@ -1,3 +1,29 @@
+DB schema: 
+CREATE TABLE IF NOT EXISTS prompts (
+  id SERIAL PRIMARY KEY,
+  description TEXT NOT NULL,
+  role VARCHAR(255) NOT NULL,
+  topics VARCHAR(255) NOT NULL,
+  context TEXT,
+  chunk_size INTEGER NOT NULL,
+  test_type VARCHAR(255) NOT NULL,
+  num_questions INTEGER NOT NULL,
+  difficulty VARCHAR(255) NOT NULL,
+  format VARCHAR(255) NOT NULL,
+  request VARCHAR(255) NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+  
+CREATE TABLE IF NOT EXISTS quizzes (
+  id SERIAL PRIMARY KEY,
+  prompt_id INTEGER REFERENCES prompts(id),
+  title VARCHAR(255) NOT NULL,
+  description TEXT,
+  questions JSONB NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+); 
+
+
 sample prompt data 1
 {
   "description": "Generate a multiple-choice quiz about the basics of JavaScript.",

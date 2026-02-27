@@ -49,15 +49,18 @@ async function initDB() {
                 request VARCHAR(255) NOT NULL,
                 created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
             );
-            
-          CREATE TABLE IF NOT EXISTS quizzes (
-            id SERIAL PRIMARY KEY,
-            prompt_id INTEGER REFERENCES prompts(id),
-            title VARCHAR(255) NOT NULL,
-            description TEXT,
-            questions JSONB NOT NULL,
-            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-          );  
+        `);
+
+        await db.query( `
+            CREATE TABLE IF NOT EXISTS quizzes (
+                id SERIAL PRIMARY KEY,
+                prompt_id INTEGER NOT NULL,
+                title VARCHAR(255) NOT NULL,
+                description TEXT,
+                questions JSONB NOT NULL,
+                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                FOREIGN KEY (prompt_id) REFERENCES prompts (id) ON DELETE CASCADE
+            );
         `);
         console.log('Connected to database');
     }

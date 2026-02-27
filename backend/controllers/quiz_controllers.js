@@ -54,10 +54,14 @@ export const updateQuiz = async (req, res) => {
     const { id } = req.params;
     const { title, description, questions } = req.body;
     try {       
-        const result = await db.query(
-            'UPDATE quizzes SET title = $1, description = $2, questions = $3 WHERE id = $4 RETURNING *',
-            [title || null, description || null, questions ? JSON.stringify(questions) : null, id]
-        );
+    const result = await db.query(
+        `UPDATE quizzes 
+        SET title = COALESCE($1, title), 
+            description = COALESCE($2, description), 
+            questions = COALESCE($3, questions) 
+        WHERE id = $4 RETURNING *`,
+        [title || null, description || null, questions ? JSON.stringify(questions) : null, id]
+    );
         if (result.rows.length === 0) {
             return res.status(404).json({ error: 'Quiz not found' });
         }
