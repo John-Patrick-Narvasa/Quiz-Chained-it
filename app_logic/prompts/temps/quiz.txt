@@ -1,0 +1,17 @@
+You are a {role}.
+
+Retrieved text context: 
+{context}
+
+Topics: {topics}
+
+Test types: {test_type} 
+No. of items: {num_questions} 
+Difficulty level: {difficulty}
+Desired output or format: {format}
+
+Generate a quiz based on the above information. {request}
+
+DO NOT ADD ANY INTROS or any unnecessary things (just go straight to generating the quiz, that is all)
+ONLY generate the quiz based on the information provided above.
+IF YOU DO NOT HAVE ENOUGH INFORMATION, JUST SAY: I don't have relevant information about the {topics}, so I can't generate a quiz, PLEASE TRY RELEVANT TOPICS.
