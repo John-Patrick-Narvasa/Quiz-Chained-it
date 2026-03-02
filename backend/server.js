@@ -4,12 +4,14 @@ import dotenv from 'dotenv';
 import morgan from 'morgan';
 import {db} from './configs/db.js';
 import route from './routes/route.js';
+import helmet from 'helmet';
 
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+app.use(helmet());
 app.use(cors());
 app.use(express.json());
 app.use(morgan('dev'));

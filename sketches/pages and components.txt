@@ -1,0 +1,20 @@
+homepage (contains all prompts || make a prompt)
+quizzes page (contains all quizzes made, organized by prompts)
+
+prompts page (contains all prompts || make a prompt)
+
+make prompt page(prompt to text)
+quiz page (proceed to quiz after making prompt)
+
+
+COMPONENTS:
+copy button
+edit button
+duplicate button
+delete button
+
+sort by (prompt, a-z, created_at, updated_at)
+create form
+edit form
+
+quiz generated (from JSON)
