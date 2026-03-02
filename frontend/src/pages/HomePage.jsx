@@ -2,8 +2,8 @@
 
 const HomePage = () => {
   return (
-    <div style={{ backgroundColor: 'red', height: '100vh', marginTop: '20px' }}>
-      <h1>HomePage is Rendering!</h1>
+    <div>
+      <h1>HomePage</h1>
     </div>
   )
 }
