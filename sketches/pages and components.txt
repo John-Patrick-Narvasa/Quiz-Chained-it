@@ -7,11 +7,13 @@ make prompt page(prompt to text)
 quiz page (proceed to quiz after making prompt)
 
 
-NAVBAR:
-search bar
-routing
 
 COMPONENTS
+
+NAVBAR:
+    search bar
+    routing
+
 Prompt page:
     Copy button
     Heading
