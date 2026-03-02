@@ -2,3 +2,7 @@
 node_modules
 commands.txt
 logs
+
+usePromptGen.js
+usePromptGen2.js
+theme.js

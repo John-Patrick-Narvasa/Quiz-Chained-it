@@ -7,14 +7,40 @@ make prompt page(prompt to text)
 quiz page (proceed to quiz after making prompt)
 
 
-COMPONENTS:
-copy button
-edit button
-duplicate button
-delete button
+NAVBAR:
+search bar
+routing
 
-sort by (prompt, a-z, created_at, updated_at)
-create form
-edit form
+COMPONENTS
+Prompt page:
+    Copy button
+    Heading
+    Input
+    Output
 
-quiz generated (from JSON)
+Quiz Page:
+    Quiz (from JSON, varying types)
+    Answer key
+
+Prompt Card:
+    edit
+    delete
+    duplicate
+
+Quiz Card (Quiz home page):
+    quiz generated (from JSON)
+    edit
+    delete
+    duplicate
+
+PAGES:
+    NewPromptPage
+    HomePage
+    PromptPage
+    QuizPage
+    QuizHomePage
+
+
+HOOKS:
+    usePromptQuizGen (Front end logic)
+    useAppAPI (Back end logic)
